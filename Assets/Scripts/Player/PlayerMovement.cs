@@ -6,24 +6,24 @@ public class PlayerMovement : MonoBehaviour
 {
 
     private Rigidbody2D rb;
-    private BoxCollider2D coll;
-    private CircleCollider2D coll2;
+    private CircleCollider2D coll;
     private Animator anim;
     private SpriteRenderer sprite;
+
 
     private float dirX = 0f;
     private float dirY = 0f;
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
+    [SerializeField] private ParticleSystem dust;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-        coll = GetComponent<BoxCollider2D>();
-        coll2 = GetComponent<CircleCollider2D>();
+        coll = GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown("space") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            
         }
 
         UpdateAnimations();
@@ -45,13 +46,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (dirX > 0)
         {
+            CreateDust();
             anim.SetBool("Running", true);
             sprite.flipX = true;
+            
         }
         else if (dirX < 0)
         {
+            CreateDust();
             anim.SetBool("Running", true);
-           sprite.flipX = false;
+            sprite.flipX = false;
+            
         }
 
         else
@@ -62,7 +67,12 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.CircleCast(coll2.bounds.center, coll2.radius, Vector2.down, .1f, jumpableGround);
+        return Physics2D.CircleCast(coll.bounds.center, coll.radius, Vector2.down, .1f, jumpableGround);
       
+    }
+
+    private void CreateDust()
+    {
+        dust.Play();
     }
 }
