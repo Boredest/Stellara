@@ -17,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
     [SerializeField] private ParticleSystem dust;
+
+    [SerializeField] private AudioClip jumpSound;
+
+    // [SerializeField] AudioClip jumpSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +41,9 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown("space") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            
+            AudioManager.Instance.PlayJumpSound(jumpSound);
+           
+
         }
 
         UpdateAnimations();

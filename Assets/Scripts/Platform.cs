@@ -6,10 +6,9 @@ public class Platform : MonoBehaviour
 {
     [SerializeField] private GameObject platform;
     [SerializeField] private float moveSpeed;
- 
     [SerializeField] private Transform[] points;
+ 
     private Transform currentPoint;
-
     private int pointSelection;
 
     // Start is called before the first frame update

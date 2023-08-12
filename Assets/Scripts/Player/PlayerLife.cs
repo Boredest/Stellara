@@ -8,6 +8,7 @@ public class PlayerLife : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer playerSprite;
     [SerializeField] private ParticleSystem deathPS;
+    [SerializeField] AudioClip playerExplodeSound;
     // Start is called before the first frame update
     private void Start()
     {
@@ -29,6 +30,7 @@ public class PlayerLife : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
         playerSprite.enabled = false;
         deathPS.Play();
+        AudioManager.Instance.PlaySound(playerExplodeSound);
         Invoke("RestartLevel", 4);
         
     }

@@ -32,11 +32,13 @@ public class UIManager : MonoBehaviour
     private void OnEnable()
     {
         Diamond.OnDiamondCollected += UpdateDiamondSprites;
+        Coin.OnCoinCollected += UpdateCoins;
     }
 
     private void OnDisable()
     {
         Diamond.OnDiamondCollected -= UpdateDiamondSprites;
+        Coin.OnCoinCollected -= UpdateCoins;
     }
 
     private void UpdateDiamondSprites()
@@ -45,10 +47,17 @@ public class UIManager : MonoBehaviour
       {
             diamonds[numOfDiamonds].color = Color.white;
             numOfDiamonds++;
-            Debug.Log(numOfDiamonds);
+            Debug.Log("Diamonds: " + numOfDiamonds);
+
 
         }
-      
+
+    }
+
+    private void UpdateCoins()
+    {
+        numOfCoins++;
+        Debug.Log(numOfCoins);
     }
 
 }

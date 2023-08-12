@@ -6,10 +6,12 @@ using System;
 public class Diamond : MonoBehaviour, ICollectible
 {
     public static event Action OnDiamondCollected;
+    [SerializeField] AudioClip diamondCollect;
     public void Collect()
     {
         Debug.Log("Diamond Collected");
-        Destroy(gameObject);
+        AudioManager.Instance.PlaySound(diamondCollect);   
         OnDiamondCollected?.Invoke();
+        Destroy(gameObject);
     }
 }
