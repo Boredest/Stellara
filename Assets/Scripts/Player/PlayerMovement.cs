@@ -75,4 +75,23 @@ public class PlayerMovement : MonoBehaviour
     {
         dust.Play();
     }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Platform")
+        {
+            Debug.Log("Moving.");
+            transform.parent = other.transform;
+        }
+
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Platform")
+        {
+            Debug.Log("Exiting.");
+            transform.parent = null;
+        }
+    }
 }
