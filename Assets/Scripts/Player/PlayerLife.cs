@@ -22,6 +22,11 @@ public class PlayerLife : MonoBehaviour
         {
             PlayerDeath();
         }
+
+        else if (collision.gameObject.CompareTag("Enemy_Basic"))
+        {
+            PlayerDeath();
+        }
     }
 
     private void PlayerDeath()
@@ -31,7 +36,7 @@ public class PlayerLife : MonoBehaviour
         playerSprite.enabled = false;
         deathPS.Play();
         AudioManager.Instance.PlaySound(playerExplodeSound);
-        Invoke("RestartLevel", 4);
+        Invoke("RestartLevel", 2);
         
     }
 

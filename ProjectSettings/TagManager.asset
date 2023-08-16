@@ -8,6 +8,7 @@ TagManager:
   - Coin
   - Spike
   - Platform
+  - Environment
   layers:
   - Default
   - TransparentFX
