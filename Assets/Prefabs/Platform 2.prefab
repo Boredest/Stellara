@@ -121,9 +121,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3447323673431914559}
     m_Modifications:
+    - target: {fileID: 1420154162166817, guid: 907b2564b08b64343a7bd429dcca3e75, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 108944928027704279, guid: 907b2564b08b64343a7bd429dcca3e75, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 904081808996040759, guid: 907b2564b08b64343a7bd429dcca3e75, type: 3}
       propertyPath: m_Name
       value: Cloud
+      objectReference: {fileID: 0}
+    - target: {fileID: 904081808996040759, guid: 907b2564b08b64343a7bd429dcca3e75, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6069775735194927125, guid: 907b2564b08b64343a7bd429dcca3e75, type: 3}
       propertyPath: m_RootOrder
@@ -169,6 +181,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8903582082694803284, guid: 907b2564b08b64343a7bd429dcca3e75, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 907b2564b08b64343a7bd429dcca3e75, type: 3}
 --- !u!4 &1517980557782883216 stripped
@@ -194,7 +210,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0027012825, y: 0.22689259}
+  m_Offset: {x: 0.0027012825, y: 0.191136}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -205,5 +221,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.0258265, y: 0.5462148}
+  m_Size: {x: 3.0258265, y: 0.47470164}
   m_EdgeRadius: 0

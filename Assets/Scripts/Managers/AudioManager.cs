@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
 	public AudioSource MusicSource;
 	public AudioSource playerJumpSound;
 
-	// Singleton instance.
+	//Singleton
 	public static AudioManager Instance = null;
 
 	

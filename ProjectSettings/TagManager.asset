@@ -9,6 +9,8 @@ TagManager:
   - Spike
   - Platform
   - Environment
+  - Enemy
+  - Enemy_Basic
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,7 @@ public class PlayerLife : MonoBehaviour
 {
     private Rigidbody2D rb;
     private SpriteRenderer playerSprite;
+    [SerializeField] private float respawnTime = 2f;
     [SerializeField] private ParticleSystem deathPS;
     [SerializeField] AudioClip playerExplodeSound;
     // Start is called before the first frame update
@@ -23,7 +24,7 @@ public class PlayerLife : MonoBehaviour
             PlayerDeath();
         }
 
-        else if (collision.gameObject.CompareTag("Enemy_Basic"))
+        else if (collision.gameObject.CompareTag("Enemy"))
         {
             PlayerDeath();
         }
@@ -36,8 +37,8 @@ public class PlayerLife : MonoBehaviour
         playerSprite.enabled = false;
         deathPS.Play();
         AudioManager.Instance.PlaySound(playerExplodeSound);
-        Invoke("RestartLevel", 2);
-        
+        Invoke("RestartLevel", respawnTime);
+
     }
 
     private void RestartLevel()

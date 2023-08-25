@@ -4,31 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+
 public class UIManager : MonoBehaviour
 {
 
     private int numOfDiamonds = 0;
-    
     private int numOfCoins = 0;
-   
 
+
+
+    [SerializeField] private Text coinText;
     [SerializeField] private Image[] diamonds;
-   
 
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        coinText.text = numOfCoins.ToString();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnEnable()
     {
         Diamond.OnDiamondCollected += UpdateDiamondSprites;
@@ -43,8 +34,8 @@ public class UIManager : MonoBehaviour
 
     private void UpdateDiamondSprites()
     {
-       if (numOfDiamonds < diamonds.Length)
-      {
+        if (numOfDiamonds < diamonds.Length)
+        {
             diamonds[numOfDiamonds].color = Color.white;
             numOfDiamonds++;
             Debug.Log("Diamonds: " + numOfDiamonds);
@@ -57,6 +48,7 @@ public class UIManager : MonoBehaviour
     private void UpdateCoins()
     {
         numOfCoins++;
+        coinText.text = numOfCoins.ToString();
         Debug.Log(numOfCoins);
     }
 
