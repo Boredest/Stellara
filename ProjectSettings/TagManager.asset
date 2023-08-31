@@ -11,6 +11,7 @@ TagManager:
   - Environment
   - Enemy
   - Enemy_Basic
+  - Kill
   layers:
   - Default
   - TransparentFX
@@ -53,4 +54,7 @@ TagManager:
     locked: 0
   - name: Terrain
     uniqueID: 463316441
+    locked: 0
+  - name: Foreground
+    uniqueID: 995096099
     locked: 0

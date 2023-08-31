@@ -8,10 +8,8 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
 
-    private int numOfDiamonds = 0;
+    public static int numOfDiamonds = 0;
     private int numOfCoins = 0;
-
-
 
     [SerializeField] private Text coinText;
     [SerializeField] private Image[] diamonds;
@@ -39,7 +37,6 @@ public class UIManager : MonoBehaviour
             diamonds[numOfDiamonds].color = Color.white;
             numOfDiamonds++;
             Debug.Log("Diamonds: " + numOfDiamonds);
-
 
         }
 

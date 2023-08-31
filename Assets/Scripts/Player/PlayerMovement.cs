@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float dirX = 0f;
     private float dirY = 0f;
     private bool doubleJump;
+    private bool isOnPlatform;
 
     private enum PlayerState { idle, running, jumping, falling }
 
@@ -124,22 +125,4 @@ public class PlayerMovement : MonoBehaviour
         dust.Play();
     }
 
-    private void OnCollisionStay2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Platform")
-        {
-            Debug.Log("Moving.");
-            transform.parent = other.transform;
-        }
-
-    }
-
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Platform")
-        {
-            Debug.Log("Exiting.");
-            transform.parent = null;
-        }
-    }
 }
