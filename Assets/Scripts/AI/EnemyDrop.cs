@@ -44,8 +44,8 @@ public class EnemyDrop : MonoBehaviour
         {
             anim.SetTrigger("isTrigger");
             rb.constraints = RigidbodyConstraints2D.None;
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-         
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+
 
         }
     }

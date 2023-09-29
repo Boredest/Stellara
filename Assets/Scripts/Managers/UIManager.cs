@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         coinText.text = numOfCoins.ToString();
+        numOfDiamonds = 0;
     }
     private void OnEnable()
     {
@@ -32,6 +33,7 @@ public class UIManager : MonoBehaviour
 
     private void UpdateDiamondSprites()
     {
+        
         if (numOfDiamonds < diamonds.Length)
         {
             diamonds[numOfDiamonds].color = Color.white;

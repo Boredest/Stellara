@@ -9,7 +9,6 @@ public class Diamond : MonoBehaviour, ICollectible
     [SerializeField] AudioClip diamondCollect;
     public void Collect()
     {
-        Debug.Log("Diamond Collected");
         AudioManager.Instance.PlaySound(diamondCollect);   
         OnDiamondCollected?.Invoke();
         Destroy(gameObject);

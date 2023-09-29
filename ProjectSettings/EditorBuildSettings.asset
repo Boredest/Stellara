@@ -5,7 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MattTest.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 12e88ab4c13e1964a9f505da59e6b4ab
+  - enabled: 1
+    path: Assets/Scenes/Stellara1.unity
+    guid: 9bbe09b29825ed943b1a20b521084d81
+  - enabled: 1
+    path: Assets/Scenes/Stellara 2.unity
+    guid: a0fc2d92a3ac6414e969cd18526b7210
+  - enabled: 1
+    path: Assets/Scenes/Stellara 3.unity
+    guid: 6b4dfdd681f1dac4691245ea61c7156f
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 3da6556559c0a5a40a6f5083eeeb9e93
   m_configObjects: {}

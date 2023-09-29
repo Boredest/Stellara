@@ -11,6 +11,7 @@ public class Interact : MonoBehaviour
         if (interaction != null)
         {
             interaction.Interact();
+            
         }
     }
 }

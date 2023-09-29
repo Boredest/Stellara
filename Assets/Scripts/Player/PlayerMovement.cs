@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
 
-
+        
         UpdateAnimations();
     }
     private void HandlePlayerMovement()
@@ -106,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (rb.velocity.y > .1f)
         {
-            Debug.Log("Play jump animation");
+            
             state = PlayerState.jumping;
         }
 

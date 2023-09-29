@@ -4,25 +4,30 @@ using UnityEngine;
 
 public class Flag : MonoBehaviour, IInteractable
 {
-    private bool isLevelOver;
-    private int diamondWinCount = 3;
+    private bool isTriggered = false;
+    private float speed = 3.5f;
+
+    [SerializeField] Transform endPoint;
+    
     public void Interact()
     {
-        if(UIManager.numOfDiamonds == diamondWinCount)
-        {
-            isLevelOver = true;
-        }
-        
-        Debug.Log("Level complete");
+        isTriggered = true; 
     }
-    void Start()
+  
+    
+    void Update()
     {
+        if (isTriggered && transform.position != endPoint.position)
+        {
+            Vector3 direction = endPoint.position;
+            transform.position = Vector3.MoveTowards(transform.position, endPoint.position,
+                speed * Time.deltaTime);
+                 
+        }
+
+       
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }

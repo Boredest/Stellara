@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Enemy_Basic
   - Kill
+  - Flag_end
   layers:
   - Default
   - TransparentFX

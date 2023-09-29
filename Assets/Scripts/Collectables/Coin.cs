@@ -10,7 +10,6 @@ public class Coin : MonoBehaviour, ICollectible
 
     public void Collect()
     {
-        Debug.Log("Coin Collected");
         AudioManager.Instance.PlaySound(coinCollect);
         OnCoinCollected?.Invoke();
         Destroy(gameObject);

@@ -28,6 +28,11 @@ public class PlayerLife : MonoBehaviour
         {
             PlayerDeath();
         }
+
+        else if (collision.gameObject.CompareTag("Kill"))
+        {
+            PlayerDeath();
+        }
     }
 
     private void PlayerDeath()
@@ -45,6 +50,7 @@ public class PlayerLife : MonoBehaviour
     {
         Debug.Log("Restarting level..");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
     }
 
 }

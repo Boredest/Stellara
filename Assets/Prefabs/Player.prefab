@@ -9698,6 +9698,7 @@ GameObject:
   - component: {fileID: 4895378834948923183}
   - component: {fileID: 4895378834948923177}
   - component: {fileID: 1755355006}
+  - component: {fileID: 969032297}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -9760,8 +9761,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 463316441
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3b62c3d1b415d9f4d89bb0eaf18c231a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9793,7 +9794,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 9772a11bee8f45d428eaee6652d5e111, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &4895378834948923181
 CircleCollider2D:
@@ -9826,7 +9827,7 @@ MonoBehaviour:
   jumpableGround:
     serializedVersion: 2
     m_Bits: 64
-  moveSpeed: 7
+  moveSpeed: 8
   fallMultiplier: 2.5
   lowJumpMultiplier: 4
   jumpForce: 14
@@ -9879,3 +9880,15 @@ MonoBehaviour:
   respawnTime: 2
   deathPS: {fileID: 1154112034}
   playerExplodeSound: {fileID: 8300000, guid: b99da9a57308d4ba1bee1cf1d9038376, type: 3}
+--- !u!114 &969032297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4895378834948923169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bd85893b53c22409e1906b2a905adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
