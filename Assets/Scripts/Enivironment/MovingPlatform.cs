@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
@@ -19,21 +17,6 @@ public class MovingPlatform : MonoBehaviour
         targetPos = startPos.position;
     }
 
-    /*private void FixedUpdate()
-    {
-        if (Vector2.Distance(transform.position, posA.position) < 0.05f)
-        {
-            targetPos = posB.position;
-        }
-
-        if (Vector2.Distance(transform.position, posB.position) < 0.05f)
-        {
-            targetPos = posA.position;
-        }
-
-        
-        platformRB.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.fixedDeltaTime);
-    }*/
 
     private void Update()
     {
