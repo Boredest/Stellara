@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour
         {
             diamonds[numOfDiamonds].color = Color.white;
             numOfDiamonds++;
-            Debug.Log("Diamonds: " + numOfDiamonds);
+            
 
         }
 
@@ -48,7 +48,7 @@ public class UIManager : MonoBehaviour
     {
         numOfCoins++;
         coinText.text = numOfCoins.ToString();
-        Debug.Log(numOfCoins);
+        
     }
 
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,12 +5,14 @@ public class PlayerLife : MonoBehaviour
 {
     private Rigidbody2D rb;
     private SpriteRenderer playerSprite;
+    private Collider2D playerCollider;
     [SerializeField] private float respawnTime = 2f;
     [SerializeField] private ParticleSystem deathPS;
     [SerializeField] AudioClip playerExplodeSound;
     // Start is called before the first frame update
     private void Start()
     {
+        playerCollider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
     }
@@ -37,8 +37,8 @@ public class PlayerLife : MonoBehaviour
 
     private void PlayerDeath()
     {
-        Debug.Log("Player Death.");
-        rb.bodyType = RigidbodyType2D.Static;
+        playerCollider.enabled = false;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
         playerSprite.enabled = false;
         deathPS.Play();
         AudioManager.Instance.PlaySound(playerExplodeSound);

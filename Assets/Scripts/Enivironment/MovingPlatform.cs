@@ -57,7 +57,13 @@ public class MovingPlatform : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             
-            collision.gameObject.transform.SetParent(this.transform);
+            Rigidbody2D playerRB = collision.GetComponent<Rigidbody2D>();
+
+            if (playerRB != null)
+            {
+                
+                playerRB.velocity = new Vector2(playerRB.velocity.x+platformRB.velocity.x, playerRB.velocity.y);
+            }
         }
     }
 
@@ -65,7 +71,13 @@ public class MovingPlatform : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.gameObject.transform.SetParent(null);
+            Rigidbody2D playerRB = collision.GetComponent<Rigidbody2D>();
+            if (playerRB != null)
+            {
+
+                playerRB.velocity = playerRB.velocity;
+            }
+
         }
     }
 }

@@ -21,7 +21,7 @@ public class EnemyDrop : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     { 
-        if(collision.gameObject.tag == "Environment")
+        if(collision.gameObject.tag == "Environment" || collision.gameObject.tag == "Spike")
         {
             deathPS.transform.parent = null;
             deathPS.Play();
@@ -45,7 +45,6 @@ public class EnemyDrop : MonoBehaviour
             anim.SetTrigger("isTrigger");
             rb.constraints = RigidbodyConstraints2D.None;
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-
 
         }
     }

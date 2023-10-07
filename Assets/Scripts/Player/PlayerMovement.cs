@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float dirX = 0f;
     private float dirY = 0f;
     private bool doubleJump;
-    private bool isOnPlatform;
+    public bool isOnPlatform;
 
     private enum PlayerState { idle, running, jumping, falling }
 
@@ -42,7 +42,12 @@ public class PlayerMovement : MonoBehaviour
     {
         HandlePlayerMovement();
         Jump();
+        UpdateAnimations();
+    }
 
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         if (rb.velocity.y < 0)
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
@@ -51,16 +56,15 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
-
-        
-        UpdateAnimations();
     }
     private void HandlePlayerMovement()
     {
         dirX = Input.GetAxisRaw("Horizontal");
         dirY = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        
     }
+
+   
     private void Jump()
     {
 
