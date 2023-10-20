@@ -4,6 +4,7 @@ A 2D platformer game made with Unity and C#.
 🎮 Stellara (Unity) 
 ✒️ Description 
 Stellara is a 2D platformer made with Unity and C#. I created 3 simple levels for players to go through. I focused on creating a loosly coupled game by using interfaces and C# events to make my systems more scalable and independent. I also implemented a singleton pattern for my sound manager to learn about singletons.
+
 ⚙️ Tools 
 
 Unity
